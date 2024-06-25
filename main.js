@@ -3,7 +3,7 @@ import { setupCounter } from './counter.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
-    <h1>Hello Vite!</h1>
+    <h1><iframe frameborder="0" src="https://itch.io/embed-upload/10618791?color=333333" allowfullscreen="" width="640" height="460"><a href="https://otama-studiosports.itch.io/cat-and-mouse">Play Cat And Mouse on itch.io</a></iframe></h1>
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
