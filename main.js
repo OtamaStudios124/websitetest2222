@@ -20,24 +20,22 @@ document.querySelector('#app').innerHTML = `
   </div>
   <div>
 
-</>
-    <h2>3D Games: Pacman 3D, Frogs, Roller 3D, Snake 3D, Snake 1st Person, Crazy Mazy</h2>
-    <h2>2D Games:Wack-A-Pac, Pac-Catch, Space Invaders, Ms Pacman, Sukoban, Frogger</h2>
+
+  
   </div>
 
 
 
   <div>
-    <p class="trigger" data-target="iframe1">Click to reveal iframe 1</p>
+    <h2 class="trigger" data-target="iframe1">Pacman 3D</h2>
     <div id="iframe1" class="iframe-container">
-        <iframe src="https://example.com/" width="500" height="300"></iframe>
-    </div>
+<iframe frameborder="0" src="https://itch.io/embed-upload/10658301?color=333333" allowfullscreen="" width="980" height="688"><a href="https://otama-studios.itch.io/pacman3d-updated-version">Play Pacman 3d (updated version) on itch.io</a></iframe>    </div>
 </div>
 
 <div>
-    <p class="trigger" data-target="iframe2">Click to reveal iframe 2</p>
+    <h2 class="trigger" data-target="iframe2">Wack-A-Pac</h2>
     <div id="iframe2" class="iframe-container">
-        <iframe src="https://example.org/" width="500" height="300"></iframe>
+      <iframe frameborder="0" src="https://itch.io/embed-upload/10641495?color=333333" allowfullscreen="" width="640" height="460"><a href="https://otama-studiosports.itch.io/wack-a-pac">Play Wack-A-Pac on itch.io</a></iframe>
     </div>
 </div>
 
