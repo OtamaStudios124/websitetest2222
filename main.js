@@ -24,8 +24,40 @@ document.querySelector('#app').innerHTML = `
     <h2>3D Games: Pacman 3D, Frogs, Roller 3D, Snake 3D, Snake 1st Person, Crazy Mazy</h2>
     <h2>2D Games:Wack-A-Pac, Pac-Catch, Space Invaders, Ms Pacman, Sukoban, Frogger</h2>
   </div>
+
+
+
+  <div>
+    <p class="trigger" data-target="iframe1">Click to reveal iframe 1</p>
+    <div id="iframe1" class="iframe-container">
+        <iframe src="https://example.com/" width="500" height="300"></iframe>
+    </div>
+</div>
+
+<div>
+    <p class="trigger" data-target="iframe2">Click to reveal iframe 2</p>
+    <div id="iframe2" class="iframe-container">
+        <iframe src="https://example.org/" width="500" height="300"></iframe>
+    </div>
+</div>
+
+
 </body>
 
     
 `;
 
+
+document.addEventListener('click', function(event) {
+  if (event.target.classList.contains('trigger')) {
+      const targetId = event.target.getAttribute('data-target');
+      const allIframes = document.querySelectorAll('.iframe-container');
+
+      allIframes.forEach(iframe => {
+          iframe.classList.remove('active');
+      });
+
+      const targetIframe = document.getElementById(targetId);
+      targetIframe.classList.add('active');
+  }
+});
