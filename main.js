@@ -1,4 +1,5 @@
 import "./style.css";
+import App from "./webgl/App";
 
 document.querySelector("#app").innerHTML = `
 <body>
@@ -67,3 +68,5 @@ document.addEventListener("click", (event) => {
     iframe.src = src;
   }
 });
+
+const app = new App();

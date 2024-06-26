@@ -28,7 +28,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #000dff;
+  /* background-color: #000dff; */
+  background-color: transparent;
 }
 
 h1 {
@@ -115,4 +116,13 @@ button:focus-visible {
   /* border: 1px solid #ddd; */
   padding: 20px;
   text-align: center;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: -10;
 }
