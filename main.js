@@ -1,7 +1,7 @@
-import './style.css'
-import { setupCounter } from './counter.js'
+import "./style.css";
+import { setupCounter } from "./counter.js";
 
-document.querySelector('#app').innerHTML = `
+document.querySelector("#app").innerHTML = `
 <body>
   <h1><em>Welcome to Otama Free Online Games</em></h1>
   <div id="iframe3" class="iframe-container">
@@ -11,19 +11,45 @@ document.querySelector('#app').innerHTML = `
     <h1>Play with Otama ↑</h2>
         <h2>Scroll down to view the games!</h2>
 
-    <p><strong>Welcome to otama's free online games! <br>Here you'll find a collection of games I have made myself, hopefully they are getting better with every release. <br>I am slowly making new games, I am mostly focusing on small scale arcade games.<br> If you're interested in putting some of these on your website, head down to the bottom and go to the info page.<br> </strong>
-<h2 class="trigger" data-target="iframe3">Enjoy the games!</h2>
-
-
-</p>
+    <p><strong>Welcome to otama's free online games! <br>Here you'll find a collection of games I have made myself, hopefully they are getting better with every release. <br>I am slowly making new games, I am mostly focusing on small scale arcade games.<br> If you're interested in putting some of these on your website, head down to the bottom and go to the info page.<br> </strong></p>
+     <h2 class="trigger" data-target="iframe3">Enjoy the games!</h2>
      <h1>Games Menu:</h1>
   </div>
-  <div>
 
 
-  
-  </div>
-
+  <div class="grid-container">
+        <!-- 30 div elements for 3 columns and 10 rows -->
+        <div class="grid-item">Column 1, Row 1</div>
+        <div class="grid-item">Column 2, Row 1</div>
+        <div class="grid-item">Column 3, Row 1</div>
+        <div class="grid-item">Column 1, Row 2</div>
+        <div class="grid-item">Column 2, Row 2</div>
+        <div class="grid-item">Column 3, Row 2</div>
+        <div class="grid-item">Column 1, Row 3</div>
+        <div class="grid-item">Column 2, Row 3</div>
+        <div class="grid-item">Column 3, Row 3</div>
+        <div class="grid-item">Column 1, Row 4</div>
+        <div class="grid-item">Column 2, Row 4</div>
+        <div class="grid-item">Column 3, Row 4</div>
+        <div class="grid-item">Column 1, Row 5</div>
+        <div class="grid-item">Column 2, Row 5</div>
+        <div class="grid-item">Column 3, Row 5</div>
+        <div class="grid-item">Column 1, Row 6</div>
+        <div class="grid-item">Column 2, Row 6</div>
+        <div class="grid-item">Column 3, Row 6</div>
+        <div class="grid-item">Column 1, Row 7</div>
+        <div class="grid-item">Column 2, Row 7</div>
+        <div class="grid-item">Column 3, Row 7</div>
+        <div class="grid-item">Column 1, Row 8</div>
+        <div class="grid-item">Column 2, Row 8</div>
+        <div class="grid-item">Column 3, Row 8</div>
+        <div class="grid-item">Column 1, Row 9</div>
+        <div class="grid-item">Column 2, Row 9</div>
+        <div class="grid-item">Column 3, Row 9</div>
+        <div class="grid-item">Column 1, Row 10</div>
+        <div class="grid-item">Column 2, Row 10</div>
+        <div class="grid-item">Column 3, Row 10</div>
+    </div>
 
 
   <div>
@@ -45,17 +71,16 @@ document.querySelector('#app').innerHTML = `
     
 `;
 
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("trigger")) {
+    const targetId = event.target.getAttribute("data-target");
+    const allIframes = document.querySelectorAll(".iframe-container");
 
-document.addEventListener('click', function(event) {
-  if (event.target.classList.contains('trigger')) {
-      const targetId = event.target.getAttribute('data-target');
-      const allIframes = document.querySelectorAll('.iframe-container');
+    allIframes.forEach((iframe) => {
+      iframe.classList.remove("active");
+    });
 
-      allIframes.forEach(iframe => {
-          iframe.classList.remove('active');
-      });
-
-      const targetIframe = document.getElementById(targetId);
-      targetIframe.classList.add('active');
+    const targetIframe = document.getElementById(targetId);
+    targetIframe.classList.add("active");
   }
 });
