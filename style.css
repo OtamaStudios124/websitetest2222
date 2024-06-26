@@ -112,7 +112,7 @@ button:focus-visible {
   padding: 10px;
 }
 .grid-item {
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   padding: 20px;
   text-align: center;
 }
