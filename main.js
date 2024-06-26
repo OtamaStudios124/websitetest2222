@@ -1,4 +1,5 @@
 import "./style.css";
+import App from "./webgl/App";
 
 document.querySelector("#app").innerHTML = `
 <body>
@@ -26,34 +27,34 @@ document.querySelector("#app").innerHTML = `
 
     <div class="grid-container">
           <div class="grid-item">
-            <h2 class="trigger" data-target="https://itch.io/embed-upload/10641495?color=333333">Pacman 3D</h2>
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10641495?color=333333">Pacman 3D</h2>
           </div>
           <div class="grid-item">
-            <h2 class="trigger" data-target="https://itch.io/embed-upload/10658301?color=333333">Wack-A-Pac</h2>
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10658301?color=333333">Wack-A-Pac</h2>
           </div>
           <div class="grid-item">
-            <h2 class="trigger" data-target="https://itch.io/embed-upload/10641495?color=333333">Pacman 3D</h2>
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10641495?color=333333">Pacman 3D</h2>
           </div>
           <div class="grid-item">
-            <h2 class="trigger" data-target="https://itch.io/embed-upload/10658301?color=333333">Wack-A-Pac</h2>
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10658301?color=333333">Wack-A-Pac</h2>
           </div>
           <div class="grid-item">
-            <h2 class="trigger" data-target="https://itch.io/embed-upload/10641495?color=333333">Pacman 3D</h2>
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10641495?color=333333">Pacman 3D</h2>
           </div>
           <div class="grid-item">
-            <h2 class="trigger" data-target="https://itch.io/embed-upload/10658301?color=333333">Wack-A-Pac</h2>
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10658301?color=333333">Wack-A-Pac</h2>
           </div>
           <div class="grid-item">
-            <h2 class="trigger" data-target="https://itch.io/embed-upload/10641495?color=333333">Pacman 3D</h2>
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10641495?color=333333">Pacman 3D</h2>
           </div>
           <div class="grid-item">
-            <h2 class="trigger" data-target="https://itch.io/embed-upload/10658301?color=333333">Wack-A-Pac</h2>
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10658301?color=333333">Wack-A-Pac</h2>
           </div>
           <div class="grid-item">
-            <h2 class="trigger" data-target="https://itch.io/embed-upload/10641495?color=333333">Pacman 3D</h2>
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10641495?color=333333">Pacman 3D</h2>
           </div>
           <div class="grid-item">
-            <h2 class="trigger" data-target="https://itch.io/embed-upload/10658301?color=333333">Wack-A-Pac</h2>
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10658301?color=333333">Wack-A-Pac</h2>
           </div>
     </div>
 </body> 
@@ -61,9 +62,11 @@ document.querySelector("#app").innerHTML = `
 
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("trigger")) {
-    const targetId = event.target.getAttribute("data-target");
+    const src = event.target.getAttribute("src-target");
     const iframeContainer = document.getElementById("iframe-container");
     const iframe = iframeContainer.querySelector("iframe");
-    iframe.src = targetId;
+    iframe.src = src;
   }
 });
+
+const app = new App();
