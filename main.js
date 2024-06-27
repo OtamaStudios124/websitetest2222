@@ -31,13 +31,13 @@ document.querySelector("#app").innerHTML = `
 
     <div class="grid-container">
           <div class="grid-item">
-            <h2 class="trigger" src-target="">3D Games</h2>
+            <h1>3D Games</h1>
           </div>
           <div class="grid-item">
-            <h2 class="trigger" src-target="">2D Games</h2>
+            <h1 >2D Games</h1>
           </div>
           <div class="grid-item">
-            <h2 class="trigger" src-target="">2 Player Games</h2>
+            <h1>2 Player Games</h1>
           </div>
           <div class="grid-item">
             <h2 class="trigger" src-target="https://itch.io/embed-upload/10658301?color=333333">Pacman 3D</h2>
