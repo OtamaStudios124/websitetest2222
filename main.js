@@ -1,4 +1,5 @@
 import "./style.css";
+import App from "./webgl/App";
 
 
 document.querySelector("#app").innerHTML = `
