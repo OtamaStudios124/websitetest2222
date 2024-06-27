@@ -43,7 +43,7 @@ document.querySelector("#app").innerHTML = `
             <h2 class="trigger" src-target="https://itch.io/embed-upload/10658301?color=333333">Pacman 3D</h2>
           </div>
           <div class="grid-item">
-            <h2 class="trigger" src-target="https://itch.io/embed-upload/10658301?color=333333">Wack-A-Pac</h2>
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10641495?color=333333">Wack-A-Pac</h2>
             
           </div>
           <div class="grid-item">
@@ -64,6 +64,26 @@ document.querySelector("#app").innerHTML = `
           <div class="grid-item">
             <h2 class="trigger" src-target="https://itch.io/embed-upload/10618624?color=333333">Frogger</h2>
           </div>
+              <div class="grid-item">
+            <h2 class="trigger" src-target=""></h2>
+          </div> 
+
+             <div class="grid-item">
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10515375?color=333333">Roller 3D</h2>
+          </div>
+
+           <div class="grid-item">
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10619079?color=333333">Ms Pacman</h2>
+          </div>
+
+            <div class="grid-item">
+            <h2 class="trigger" src-target=""></h2>
+          </div> 
+             
+           <div class="grid-item">
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10650992?color=333333">Crazy Mazy</h2>
+          </div> 
+
     </div>
 </body> 
 `;
