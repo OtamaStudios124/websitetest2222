@@ -1,5 +1,7 @@
 import * as THREE from "three";
 import App from "./App";
+import fragmentShader from "../shaders/background/fragment.glsl";
+import vertexShader from "../shaders/background/vertex.glsl";
 
 export default class World {
   constructor() {
@@ -15,7 +17,18 @@ export default class World {
 
     this.geometry = new THREE.PlaneGeometry(width, height);
 
-    this.material = new THREE.MeshBasicMaterial({ color: "#000dff" });
+    this.material = new THREE.ShaderMaterial(
+      { 
+        // color: "#000dff",
+        fragmentShader,
+        vertexShader,
+        uniforms: {
+          time: {
+            value: this.app.time.elapsedTime,
+          }
+        }
+      }
+    );
     this.instance = new THREE.Mesh(this.geometry, this.material);
 
     this.app.scene.add(this.instance);
@@ -31,5 +44,7 @@ export default class World {
     this.instance.geometry = this.geometry;
   }
 
-  update() {}
+  update() {
+    this.instance.material.uniforms.time.value = this.app.time.elapsed * 0.0002;
+  }
 }
