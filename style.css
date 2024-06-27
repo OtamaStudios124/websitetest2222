@@ -99,9 +99,9 @@ button:focus-visible {
 
 
 .iframe-container {
-  display: none;
   margin-top: 10px;
 }
+
 .active {
   display: block;
 }

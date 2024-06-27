@@ -23,7 +23,7 @@ document.querySelector("#app").innerHTML = `
       
     </div>
 
-    <div id="iframe-container">
+    <div id="iframe-container" style="display: none;">
       <iframe frameborder="0" src="" "" width="980" height="688">
         <a</a>
       </iframe>
@@ -72,6 +72,7 @@ document.addEventListener("click", (event) => {
   if (event.target.classList.contains("trigger")) {
     const src = event.target.getAttribute("src-target");
     const iframeContainer = document.getElementById("iframe-container");
+    iframeContainer.style.display = "block";
     const iframe = iframeContainer.querySelector("iframe");
     iframe.src = src;
   }
