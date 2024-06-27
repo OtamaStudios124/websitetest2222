@@ -61,6 +61,9 @@ document.querySelector("#app").innerHTML = `
           <div class="grid-item">
             <h2 class="trigger" src-target="https://itch.io/embed-upload/10649659?color=333333">Snake 3D</h2>
           </div>
+          <div class="grid-item">
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10618624?color=333333">Frogger</h2>
+          </div>
     </div>
 </body> 
 `;
