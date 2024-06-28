@@ -15,7 +15,7 @@ export default class Eye {
   }
 
   start() {
-    this.geometry = new THREE.SphereGeometry(0.00023, 32, 32);
+    this.geometry = new THREE.SphereGeometry(0.00027, 32, 32);
     this.material = new THREE.ShaderMaterial({
       //  color: new THREE.Color("#ffffff"),
       side: THREE.DoubleSide,

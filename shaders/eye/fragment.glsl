@@ -12,7 +12,7 @@ void main()
     
     float distance = length(uv - center);
 
-    float pupil = step(0.08, distance);
+    float pupil = step(0.13, distance);
 
     gl_FragColor = vec4(pupil, pupil, pupil, 1.0);
 }
