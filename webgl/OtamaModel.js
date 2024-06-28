@@ -17,7 +17,8 @@ export default class OtamaModel {
     new GLTFLoader().load("otamatone.glb", (gltf) => {
       this.model = gltf.scene.children[0].children[0];
       this.start();
-      this.addEyes(); 
+      this.addEyes();
+      this.animation();
       this.startTrackingPosition = true;
     });
   }
@@ -26,12 +27,10 @@ export default class OtamaModel {
     this.geometry = this.model.geometry;
     this.geometry.computeVertexNormals();
 
-    this.material = new THREE.MeshPhongMaterial(
-        { 
-            color: new THREE.Color("#0099FF"),
-            side: THREE.DoubleSide,
-        }
-    );
+    this.material = new THREE.MeshPhongMaterial({
+      color: new THREE.Color("#0099FF"),
+      side: THREE.DoubleSide,
+    });
     this.instance = new THREE.Mesh(this.geometry, this.material);
     this.instance.name = "otamaModelInstance";
 
@@ -41,10 +40,15 @@ export default class OtamaModel {
     this.group.add(this.instance);
   }
 
-  addEyes()
-  {
-    this.leftEye = new Eye(this.group, new THREE.Vector3(-0.00048, -0.0004, 0.0023)); 
-    this.rightEye = new Eye(this.group, new THREE.Vector3(0.00048, -0.0004, 0.0023)); 
+  addEyes() {
+    this.leftEye = new Eye(
+      this.group,
+      new THREE.Vector3(-0.00048, -0.0004, 0.0023)
+    );
+    this.rightEye = new Eye(
+      this.group,
+      new THREE.Vector3(0.00048, -0.0004, 0.0023)
+    );
   }
 
   followTarget() {
@@ -72,6 +76,23 @@ export default class OtamaModel {
       0.7
     );
   }
+
+  animation() {
+    document.addEventListener("mousemove", (e) => {
+      let x = e.clientX / this.app.sizes.width;
+      let y = e.clientY / this.app.sizes.height;
+
+      x = x * 2.0 - 1.0;
+      y = y * 2.0 - 0.7;
+
+      this.group.rotation.set(
+        y * Math.PI * 0.05,
+        x * Math.PI * 0.1,
+        0
+      );
+    });
+  }
+
   update() {
     if (this.startTrackingPosition) {
       this.followTarget();
