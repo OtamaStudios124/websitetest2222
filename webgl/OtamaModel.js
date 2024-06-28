@@ -2,8 +2,7 @@ import * as THREE from "three";
 import App from "./App";
 import Helper from "./Helper";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-
-import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils.js';
+import Eye from "./Eye";
 
 export default class OtamaModel {
   constructor() {
@@ -18,15 +17,14 @@ export default class OtamaModel {
     new GLTFLoader().load("otamatone.glb", (gltf) => {
       this.model = gltf.scene.children[0].children[0];
       this.start();
+      this.addEyes();
       this.startTrackingPosition = true;
     });
   }
 
   start() {
-    // this.geometry = new THREE.BoxGeometry(1, 1, 1);
     this.geometry = this.model.geometry;
     this.geometry.computeVertexNormals();
-    const smoothGeometry = BufferGeometryUtils.toCreasedNormals(this.geometry, Math.PI / 6); // PI/6 is the crease angle
 
     this.material = new THREE.MeshPhongMaterial(
         { 
@@ -36,21 +34,17 @@ export default class OtamaModel {
     );
     this.instance = new THREE.Mesh(this.geometry, this.material);
     this.instance.name = "otamaModelInstance";
-    // this.instance.geometry = smoothGeometry;
 
     this.instance.scale.set(0.00015, 0.00015, 0.00015);
-    this.instance.rotation.set(-Math.PI * 0.5, Math.PI * 0.0, -Math.PI * 0.5);
-    this.instance.position.set(0.0015, -0.002, 0);
+    this.instance.rotation.set(-Math.PI * 0.35, Math.PI * 0.0, -Math.PI * 0.5);
+    this.instance.position.set(0.0015, -0.0015, 0);
     this.group.add(this.instance);
+  }
 
-
-    // this.geometry2 = new THREE.BoxGeometry(1, 1, 1);
-    // this.material2 = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
-    // this.instance2 = new THREE.Mesh(this.geometry2, this.material2);
-    // this.instance2.name = "otamaModelInstance2";
-
-    // console.log(this.instance);
-    // this.app.scene.add(this.instance2);
+  addEyes()
+  {
+    this.leftEye = new Eye(this.group, new THREE.Vector3(-0.0005, -0.0004, 0.0023)); 
+    this.rightEye = new Eye(this.group, new THREE.Vector3(0.0005, -0.0004, 0.0023)); 
   }
 
   followTarget() {
@@ -81,9 +75,6 @@ export default class OtamaModel {
   update() {
     if (this.startTrackingPosition) {
       this.followTarget();
-    //   console.log(this.group.position);
     }
-
-
   }
 }
