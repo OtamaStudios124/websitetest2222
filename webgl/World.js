@@ -2,12 +2,14 @@ import * as THREE from "three";
 import App from "./App";
 import fragmentShader from "../shaders/background/fragment.glsl";
 import vertexShader from "../shaders/background/vertex.glsl";
+import OtamaModel from "./OtamaModel";
 
 export default class World {
   constructor() {
     this.app = new App();
 
     this.start();
+    this.otomaModel();
   }
 
   start() {
@@ -34,6 +36,11 @@ export default class World {
     this.app.scene.add(this.instance);
   }
 
+  otomaModel()
+  {
+    this.otamaModel = new OtamaModel();
+  }
+
   resize() {
     const fov = this.app.camera.instance.fov * (Math.PI / 180);
     const height = 2 * Math.tan(fov / 2) * Math.abs(this.app.camera.instance.position.z);
@@ -46,5 +53,8 @@ export default class World {
 
   update() {
     this.instance.material.uniforms.time.value = this.app.time.elapsed * 0.0002;
+    if (this.otamaModel) {
+      this.otamaModel.update();
+    }
   }
 }

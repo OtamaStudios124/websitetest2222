@@ -5,11 +5,7 @@ import App from "./webgl/App";
 document.querySelector("#app").innerHTML = `
 <body>
     <h1><em>Welcome to Otama Free Online Games</em></h1>
-    <div>
-      <iframe frameborder="0" src="https://itch.io/embed-upload/10627049?color=333333" allowfullscreen="" width="450" height="360">
-        <a href="https://otama-studiosports.itch.io/otama-looks-at-the-mouse">Play Otama looks at the mouse on itch.io
-        </a>
-      </iframe>
+    <div id="marker" style="min-height: 33vh;">
     </div>
     <div>
       <h1>Play with Otama ↑</h1>
@@ -99,3 +95,10 @@ document.addEventListener("click", (event) => {
 });
 
 const app = new App();
+
+
+
+/* <iframe frameborder="0" src="https://itch.io/embed-upload/10627049?color=333333" allowfullscreen="" width="450" height="360">
+<a href="https://otama-studiosports.itch.io/otama-looks-at-the-mouse">Play Otama looks at the mouse on itch.io
+</a>
+</iframe> */

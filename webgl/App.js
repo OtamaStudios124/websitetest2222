@@ -4,6 +4,8 @@ import Time from "./Time";
 import Camera from "./Camera";
 import Renderer from "./Renderer";
 import World from "./World";
+import Environment from "./Environment";
+import Debug from "./Debug";
 
 let instance = null;
 
@@ -32,6 +34,8 @@ export default class App {
     // this.scene.fog = new THREE.Fog(new THREE.Color("#090909"), 80, 90);
     this.camera = new Camera();
     this.renderer = new Renderer();
+    this.debug = new Debug();
+    this.environment = new Environment();
     this.world = new World();
 
     // Resize event
