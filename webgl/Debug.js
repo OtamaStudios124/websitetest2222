@@ -4,7 +4,7 @@ export default class Debug
 {
     constructor()
     {
-        this.active = true;
+        this.active = false;
         
         if(this.active)
         {
