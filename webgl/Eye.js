@@ -25,6 +25,10 @@ export default class Eye
             uniforms: {
                 time: {
                     value: this.app.time.elapsed,
+                },
+                aspectRatio: 
+                {
+                    value: new THREE.Vector2(this.app.sizes.width, this.app.sizes.height)
                 }
             }
         });
@@ -36,6 +40,8 @@ export default class Eye
         this.instance.renderOrder = 500;
         this.instance.material.depthTest = false; // Disable depth testing
         this.instance.material.depthWrite = false; // Disable writing to the depth buffer
+
+        // this.instance.rotation.y -= Math.PI * 0.05;
 
         this.group.add(this.instance);
     }

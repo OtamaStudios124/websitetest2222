@@ -1,17 +1,18 @@
 varying vec2 vUv;
+uniform float aspectRatio;
 
 
 void main()
 {
 
 
-    vec2 center = vec2(0.25, 0.25);
-    float distance = length(vUv - center);
+    vec2 center = vec2(0.5, 0.5);
 
-    distance = step(0.15, distance);
-    // gl_FragColor = vec4(vUv, 1.0, 1.0);
+    vec2 uv = vec2(vUv.x * 2.0 , vUv.y);
+    
+    float distance = length(uv - center);
 
-    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+    float pupil = step(0.08, distance);
 
-    gl_FragColor = vec4(distance, distance, distance, 1.0);
+    gl_FragColor = vec4(pupil, pupil, pupil, 1.0);
 }
