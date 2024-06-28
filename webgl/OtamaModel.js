@@ -17,7 +17,7 @@ export default class OtamaModel {
     new GLTFLoader().load("otamatone.glb", (gltf) => {
       this.model = gltf.scene.children[0].children[0];
       this.start();
-      this.addEyes();
+      this.addEyes(); 
       this.startTrackingPosition = true;
     });
   }
@@ -43,8 +43,8 @@ export default class OtamaModel {
 
   addEyes()
   {
-    this.leftEye = new Eye(this.group, new THREE.Vector3(-0.0005, -0.0004, 0.0023)); 
-    this.rightEye = new Eye(this.group, new THREE.Vector3(0.0005, -0.0004, 0.0023)); 
+    this.leftEye = new Eye(this.group, new THREE.Vector3(-0.00048, -0.0004, 0.0023)); 
+    this.rightEye = new Eye(this.group, new THREE.Vector3(0.00048, -0.0004, 0.0023)); 
   }
 
   followTarget() {
