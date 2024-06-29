@@ -52,7 +52,7 @@ export default class World {
   }
 
   update() {
-    this.instance.material.uniforms.time.value = this.app.time.elapsed * 0.0002;
+    this.instance.material.uniforms.time.value = this.app.time.elapsed * 0.0012;
     if (this.otamaModel) {
       this.otamaModel.update();
     }

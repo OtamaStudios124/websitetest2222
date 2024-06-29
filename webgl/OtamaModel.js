@@ -3,6 +3,7 @@ import App from "./App";
 import Helper from "./Helper";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import Eye from "./Eye";
+import gsap from "gsap";
 
 export default class OtamaModel {
   constructor() {
@@ -63,21 +64,22 @@ export default class OtamaModel {
     this.group.position.x = this.helper.lerp(
       this.group.position.x,
       this.targetPosition.x,
-      0.7
+      0.1
     );
     this.group.position.y = this.helper.lerp(
       this.group.position.y,
       this.targetPosition.y,
-      0.7
+      0.1
     );
     this.group.position.z = this.helper.lerp(
       this.group.position.z,
       this.targetPosition.z,
-      0.7
+      0.1
     );
   }
 
   animation() {
+
     document.addEventListener("mousemove", (e) => {
       let x = e.clientX / this.app.sizes.width;
       let y = e.clientY / this.app.sizes.height;

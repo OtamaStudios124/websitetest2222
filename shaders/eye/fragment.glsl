@@ -1,5 +1,6 @@
 varying vec2 vUv;
 uniform float aspectRatio;
+uniform float blinkValue;
 
 
 void main()
@@ -14,5 +15,11 @@ void main()
 
     float pupil = step(0.13, distance);
 
-    gl_FragColor = vec4(pupil, pupil, pupil, 1.0);
+    float blink = uv.y -= (blinkValue + 0.2);
+
+    blink = step(0.1, blink * -1.0);
+
+    float o = pupil * blink;
+
+    gl_FragColor = vec4(o, o, o, 1.0);
 }
