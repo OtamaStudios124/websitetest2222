@@ -42,13 +42,23 @@ export default class OtamaModel {
   }
 
   addEyes() {
+
+    // add random blink action
+    const randomBlinkTimeArray = [];
+
+    for (let i = 0; i < 20; i++) {
+        randomBlinkTimeArray.push(Math.random() * 3 + Math.random() * 3);
+    }
+
     this.leftEye = new Eye(
       this.group,
-      new THREE.Vector3(-0.00048, -0.0004, 0.0023)
+      new THREE.Vector3(-0.00048, -0.0004, 0.0023),
+      randomBlinkTimeArray
     );
     this.rightEye = new Eye(
       this.group,
-      new THREE.Vector3(0.00048, -0.0004, 0.0023)
+      new THREE.Vector3(0.00048, -0.0004, 0.0023),
+      randomBlinkTimeArray
     );
   }
 

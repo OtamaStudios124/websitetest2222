@@ -5,14 +5,18 @@ import vertexShader from "../shaders/eye/vertex.glsl";
 import gsap from "gsap";
 
 export default class Eye {
-  constructor(group, position) {
+  constructor(group, position, randomBlinkTimeArray) {
     this.group = group;
     this.position = position;
+    this.randomBlinkTimeArray = randomBlinkTimeArray;
     this.app = new App();
 
     this.blinkValue = {
       value: 1.0,
     };
+
+    //cache
+    this.count = 0;
 
     this.start();
     this.animation();
@@ -63,7 +67,12 @@ export default class Eye {
         yoyo: true,
         repeat: 1
       })
-      .to({}, {duration: 3.0}); // This creates a delay
+      .to({}, {duration: this.randomBlinkTimeArray[this.count]}); // This creates a delay
+
+      this.count++;
+      if(this.count >= this.randomBlinkTimeArray.length) {
+        this.count = 0;
+      }
   }
 
   animation() {
