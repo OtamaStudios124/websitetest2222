@@ -5,10 +5,18 @@ import vertexShader from "../shaders/eye/vertex.glsl";
 import gsap from "gsap";
 
 export default class Eye {
-  constructor(group, position) {
+  constructor(group, position, randomBlinkTimeArray) {
     this.group = group;
     this.position = position;
+    this.randomBlinkTimeArray = randomBlinkTimeArray;
     this.app = new App();
+
+    this.blinkValue = {
+      value: 1.0,
+    };
+
+    //cache
+    this.count = 0;
 
     this.start();
     this.animation();
@@ -29,6 +37,9 @@ export default class Eye {
         aspectRatio: {
           value: new THREE.Vector2(this.app.sizes.width, this.app.sizes.height),
         },
+        blinkValue: {
+          value: this.blinkValue.value,
+        }
       },
     });
 
@@ -47,19 +58,35 @@ export default class Eye {
     this.group.add(this.instance);
   }
 
+  blinkAnimation() {
+    gsap.timeline({repeat: -1})
+      .to(this.instance.material.uniforms.blinkValue, {
+        value: 0.0,
+        duration: 0.05,
+        ease: "power2.inOut",
+        yoyo: true,
+        repeat: 1
+      })
+      .to({}, {duration: this.randomBlinkTimeArray[this.count]}); // This creates a delay
+
+      this.count++;
+      if(this.count >= this.randomBlinkTimeArray.length) {
+        this.count = 0;
+      }
+  }
+
   animation() {
+
+    this.blinkAnimation();
+
     document.addEventListener("mousemove", (e) => {
       let x = e.clientX / this.app.sizes.width;
       let y = e.clientY / this.app.sizes.height;
 
-      x = (x * 2.0 - 1.0);
-      y = (y * 2.0 - 0.7);
+      x = x * 2.0 - 1.0;
+      y = y * 2.0 - 0.7;
 
-        this.instance.rotation.set(
-        y * Math.PI * 0.25,
-        x * Math.PI * 0.25,
-        0
-      );
+      this.instance.rotation.set(y * Math.PI * 0.25, x * Math.PI * 0.25, 0);
     });
   }
 }
