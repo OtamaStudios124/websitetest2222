@@ -36,7 +36,7 @@ document.querySelector("#app").innerHTML = `
             <h1>2 Player Games</h1>
           </div>
           <div class="grid-item">
-            <h2 class="trigger" src-target="https://itch.io/embed-upload/10658301?color=333333">Pacman 3D</h2>
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10799992?color=333333">Pacman 3D</h2>
           </div>
           <div class="grid-item">
             <h2 class="trigger" src-target="https://itch.io/embed-upload/10641495?color=333333">Wack-A-Pac</h2>
@@ -46,7 +46,7 @@ document.querySelector("#app").innerHTML = `
             <h2 class="trigger" src-target="https://itch.io/embed-upload/10618437?color=333333">Pong</h2>
           </div>
           <div class="grid-item">
-            <h2 class="trigger" src-target="https://itch.io/embed-upload/10496669?color=333333">Frogs</h2>
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10799966?color=333333">Frogs</h2>
           </div>
           <div class="grid-item">
             <h2 class="trigger" src-target="https://itch.io/embed-upload/10618482?color=333333">Space Invaders</h2>
@@ -55,7 +55,7 @@ document.querySelector("#app").innerHTML = `
             <h2 class="trigger" src-target=""></h2>
           </div>
           <div class="grid-item">
-            <h2 class="trigger" src-target="https://itch.io/embed-upload/10649659?color=333333">Snake 3D</h2>
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10799846?color=333333">Snake 3D</h2>
           </div>
           <div class="grid-item">
             <h2 class="trigger" src-target="https://itch.io/embed-upload/10618624?color=333333">Frogger</h2>
