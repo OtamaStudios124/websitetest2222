@@ -79,6 +79,9 @@ document.querySelector("#app").innerHTML = `
            <div class="grid-item">
             <h2 class="trigger" src-target="https://itch.io/embed-upload/10650992?color=333333">Crazy Mazy</h2>
           </div> 
+           <div class="grid-item">
+            <h2 class="trigger" src-target="https://itch.io/embed-upload/10742940?color=333333">Pac-Catch</h2>
+          </div> 
 
     </div>
 </body> 
