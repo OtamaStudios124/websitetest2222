@@ -2,6 +2,7 @@ import * as THREE from "three";
 import App from "./App";
 import Helper from "./Helper";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import Eye from "./Eye";
 import gsap from "gsap";
 
@@ -15,7 +16,15 @@ export default class OtamaModel {
     this.group.name = "otamaModelGroup";
     this.app.scene.add(this.group);
 
-    new GLTFLoader().load("otamatone.glb", (gltf) => {
+    const loader = new GLTFLoader();
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath(
+        "https://www.gstatic.com/draco/versioned/decoders/1.4.1/"
+      );
+    loader.setDRACOLoader(dracoLoader);
+
+
+    loader.load("otamatone-compressed.glb", (gltf) => {
       this.model = gltf.scene.children[0].children[0];
       this.start();
       this.addEyes();
