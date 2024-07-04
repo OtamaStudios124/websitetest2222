@@ -1,5 +1,6 @@
 import Body from "./body";
 import Footer from "./footer";
+import Header from "./header";
 
 let html = null;
 
@@ -10,6 +11,7 @@ export default class Html {
     }
     html = this;
 
+    this.header = new Header();
     this.body = new Body();
     this.footer = new Footer();
 

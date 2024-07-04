@@ -5,13 +5,13 @@ export default class Footer {
     this.html = new Html();
 
     //cache
-    this.footer = document.querySelector("#footer");
+    this.instance = document.querySelector("#footer");
 
     this.start();
   }
 
   start() {
-    this.footer.innerHTML = `
+    this.instance.innerHTML = `
     <div>
        
     </div>`;
