@@ -1,3 +1,4 @@
+import Footer from "./footer";
 import "./style.css";
 import App from "./webgl/App";
 
@@ -97,11 +98,6 @@ document.addEventListener("click", (event) => {
   }
 });
 
+const footer = new Footer();
+
 const app = new App();
-
-
-
-/* <iframe frameborder="0" src="https://itch.io/embed-upload/10627049?color=333333" allowfullscreen="" width="450" height="360">
-<a href="https://otama-studiosports.itch.io/otama-looks-at-the-mouse">Play Otama looks at the mouse on itch.io
-</a>
-</iframe> */
