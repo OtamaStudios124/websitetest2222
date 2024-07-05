@@ -89,6 +89,34 @@ export default class Body {
                 <div class="grid-item">
                     <h2 class="trigger" src-target="https://itch.io/embed-upload/10742940?color=333333">Pac-Catch</h2>
                 </div> 
+                <div class="grid-item">
+                    <h2 class="trigger" src-target=""></h2>
+                </div> 
+                <div class="grid-item">
+                    <h2 class="trigger" src-target="https://itch.io/embed-upload/10710316?color=333333">Obstacle Course 3D </h2>
+                </div> 
+                 <div class="grid-item">
+                    <h2 class="trigger" src-target="https://itch.io/embed-upload/10618539?color=333333">Sukoban </h2>
+                </div> 
+                <div class="grid-item">
+                    <h2 class="trigger" src-target=""></h2>
+                </div> 
+                 <div class="grid-item">
+                    <h2 class="trigger" src-target="https://itch.io/embed-upload/10496710?color=333333">Pacman Roll Course</h2>
+                </div> 
+                <div class="grid-item">
+                    <h2 class="trigger" src-target="https://itch.io/embed-upload/10618809?color=333333">Killer The Cat</h2>
+                </div> 
+                <div class="grid-item">
+                    <h2 class="trigger" src-target=""></h2>
+                </div> 
+                <div class="grid-item">
+                    <h2 class="trigger" src-target="https://itch.io/embed-upload/10813055?color=333333">Splat</h2>
+                </div> 
+                <div class="grid-item">
+                    <h2 class="trigger" src-target="https://itch.io/embed-upload/10618659?color=333333">Deep Sea Diving</h2>
+                </div> 
+                
 
             </div>
         </body> 
